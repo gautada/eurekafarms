@@ -22,6 +22,9 @@ gateway:
   port: 8080
   trustedProxies:
     - "10.0.0.0/8"
+  controlUi:
+    dangerouslyDisableDeviceAuth: true
+    allowInsecureAuth: true
 #   auth:
 #     mode: "token"
 #     # Token provided via OPENCLAW_GATEWAY_TOKEN env var

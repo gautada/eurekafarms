@@ -81,8 +81,12 @@ ENV OPENCLAW_HOME=/home/$USER/openclaw
 RUN /bin/ln -fsv /mnt/volumes/data "/home/$USER/openclaw"
 
 # Copy persona configuration
-COPY workspace/SOUL.md /opt/openclaw/workspace/SOUL.md
-COPY workspace/config.yaml /opt/openclaw/workspace/config.yaml
+COPY workspace/SOUL.md /mnt/volumes/configuration/SOUL.md
+COPY workspace/config.yaml /mnt/volumes/configuration/config.yaml
+RUN /bin/ln -fsv /mnt/volumes/configuration/SOUL.md \
+                 /opt/openclaw/workspace/SOUL.md \
+ && /bin/ln -fsv  /mnt/volumes/configuration/config.yaml \
+                  /opt/openclaw/workspace/config.yaml
 
 
 # ┌──────────────────────────────────────────────────────────┐
