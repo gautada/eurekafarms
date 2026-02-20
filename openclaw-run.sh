@@ -12,14 +12,11 @@ OPENCLAW_HOME="/home/nyx/openclaw"
 # Ensure workspace directory exists
 mkdir -p "${OPENCLAW_HOME}"
 
-# Link default workspace config if not present
-if [ ! -f "${OPENCLAW_HOME}/SOUL.md" ]; then
-  cp /opt/openclaw/workspace/SOUL.md "${OPENCLAW_HOME}/SOUL.md"
-fi
-
-if [ ! -f "${OPENCLAW_HOME}/config.yaml" ]; then
-  cp /opt/openclaw/workspace/config.yaml "${OPENCLAW_HOME}/config.yaml"
-fi
+# Symlink configuration from mounted volume (ConfigMap)
+ln -fsv /mnt/volumes/configuration/SOUL.md \
+        "${OPENCLAW_HOME}/SOUL.md"
+ln -fsv /mnt/volumes/configuration/config.yaml \
+       "${OPENCLAW_HOME}/config.yaml"
 
 # Ensure correct ownership
 chown -R ${_UID}:${_UID} "${OPENCLAW_HOME}"
