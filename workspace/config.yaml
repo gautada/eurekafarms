@@ -20,9 +20,9 @@ model:
 gateway:
   bind: "0.0.0.0"
   port: 8080
-  auth:
-    mode: "token"
-    # Token provided via OPENCLAW_GATEWAY_TOKEN env var
+#   auth:
+#     mode: "token"
+#     # Token provided via OPENCLAW_GATEWAY_TOKEN env var
 
 # Channel Configuration
 # ═══════════════════════════════════════════════════════════════
@@ -82,7 +82,7 @@ tools:
 
 security:
   # DM policy for unknown senders
-  dmPolicy: "pairing"
+  dmPolicy: "open"
 
   # Require explicit allowlist for channels
-  requireAllowlist: true
+  requireAllowlist: false
