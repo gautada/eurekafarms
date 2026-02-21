@@ -54,7 +54,6 @@ RUN /usr/sbin/usermod -l $USER debian \
 ENV OPENCLAW_HOME=/home/$USER
 USER $USER
 
-RUN corepack enable
 
 WORKDIR /opt/openclaw
 # Permissions
@@ -64,10 +63,9 @@ RUN chown -R $USER:$USER /opt/openclaw
 ARG OPENCLAW_VERSION=v2026.02.19
 RUN git config --global advice.detachedHead false \
  && git clone --depth 1 --branch ${OPENCLAW_VERSION} \
-         https://github.com/openclaw/openclaw.git . 
-
-# Install dependencies, build the application, and build Control UI
-RUN pnpm install --frozen-lockfile \     
+         https://github.com/openclaw/openclaw.git . \
+ && corepack enable \
+ && pnpm install --frozen-lockfile \     
  && pnpm build \
  && pnpm ui:build
 
