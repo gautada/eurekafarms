@@ -10,3 +10,4 @@ ignored:
   # # hadolint ignore=DL4006
   # RUN foo | bar
   # ```
+  - DL3009 # Ignore apt install info about clearing cache
