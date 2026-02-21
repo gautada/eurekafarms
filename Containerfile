@@ -37,34 +37,34 @@ RUN pnpm install --frozen-lockfile \
 # # ══════════════════════════════════════════════════════════════
 # # Stage 2: Runtime container
 # # ══════════════════════════════════════════════════════════════
-# FROM docker.io/gautada/debian:${IMAGE_VERSION} AS container
+FROM docker.io/gautada/debian:${IMAGE_VERSION} AS container
 #
 # # ┌──────────────────────────────────────────────────────────┐
 # # │ Runtime Dependencies                                     │
 # # └──────────────────────────────────────────────────────────┘
-# RUN apt-get update && \
-#     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-#     ca-certificates \
-#     curl \
-#     git \
-#     && rm -rf /var/lib/apt/lists/*
-#
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
 # # Install Node.js 22.x runtime
-# RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
-#     apt-get install -y --no-install-recommends nodejs && \
-#     rm -rf /var/lib/apt/lists/*
-#
-# # ┌──────────────────────────────────────────────────────────┐
-# # │ Application Setup                                        │
-# # └──────────────────────────────────────────────────────────┘
-# WORKDIR /opt/openclaw
-#
-# # Copy built application from builder
-# COPY --from=builder --chown=1001:1001 /build/node_modules ./node_modules
-# COPY --from=builder --chown=1001:1001 /build/dist ./dist
-# COPY --from=builder --chown=1001:1001 /build/openclaw.mjs ./openclaw.mjs
-# COPY --from=builder --chown=1001:1001 /build/package.json ./package.json
-#
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
+    apt-get install -y --no-install-recommends nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
+# ┌──────────────────────────────────────────────────────────┐
+# │ Application Setup                                        │
+# └──────────────────────────────────────────────────────────┘
+WORKDIR /opt/openclaw
+
+# Copy built application from builder
+COPY --from=builder --chown=1001:1001 /build/node_modules ./node_modules
+COPY --from=builder --chown=1001:1001 /build/dist ./dist
+COPY --from=builder --chown=1001:1001 /build/openclaw.mjs ./openclaw.mjs
+COPY --from=builder --chown=1001:1001 /build/package.json ./package.json
+
 # # ┌──────────────────────────────────────────────────────────┐
 # # │ Workspace Configuration                                  │
 # # └──────────────────────────────────────────────────────────┘
