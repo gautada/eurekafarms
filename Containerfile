@@ -32,7 +32,7 @@ RUN git config --global advice.detachedHead false \
 # Install dependencies, build the application, and build Control UI
 RUN pnpm install --frozen-lockfile \     
  && pnpm ui:build \
- && pnpm install
+ && pnpm build
 
 # # ══════════════════════════════════════════════════════════════
 # # Stage 2: Runtime container
