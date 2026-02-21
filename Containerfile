@@ -32,7 +32,7 @@ RUN apt-get update && \
  && rm -rf /var/lib/apt/lists/* \
  && corepack enable
 
-WORKDIR /build
+WORKDIR /opt/openclaw
 
 # Clone OpenClaw
 ARG OPENCLAW_VERSION=v2026.02.19
