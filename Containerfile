@@ -64,7 +64,7 @@ RUN /usr/sbin/usermod -l $USER debian \
 
 # OpenClaw workspace directory
 ENV OPENCLAW_HOME=/home/$USER
-USER #USER
+USER $USER
 RUN pnpm install --frozen-lockfile \     
  && pnpm build \
  && pnpm ui:build
