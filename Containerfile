@@ -122,7 +122,7 @@ RUN pnpm install --frozen-lockfile \
 # ┌──────────────────────────────────────────────────────────┐
 # │ Service Configuration                                    │
 # └──────────────────────────────────────────────────────────┘
-USER ROOT
+USER root
 # COPY entrypoint.sh /usr/bin/container-entrypoint
 # RUN chmod +x /usr/bin/container-entrypoint
 
