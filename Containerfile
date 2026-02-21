@@ -63,7 +63,7 @@ RUN chown -R $USER:$USER /opt/openclaw
 ARG OPENCLAW_VERSION=v2026.02.19
 RUN git config --global advice.detachedHead false \
  && git clone --depth 1 --branch ${OPENCLAW_VERSION} \
-         https://github.com/openclaw/openclaw.git . \
+         https://github.com/openclaw/openclaw.git .
 
  # && corepack enable \
  # && pnpm install --frozen-lockfile \     
