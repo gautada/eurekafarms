@@ -12,3 +12,4 @@ ignored:
   # ```
   - DL3009  # Ignore apt install info about clearing cache
   - DL3002  # Last user not root
+  - SC2115  # Shell check issue
