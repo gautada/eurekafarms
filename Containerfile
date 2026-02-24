@@ -2,7 +2,7 @@
 # │ Nyx Calder - OpenClaw AI Assistant Container            │
 # ╰──────────────────────────────────────────────────────────╯
 
-ARG CONTAINER_VERSION=dev
+ARG CONTAINER_VERSION=latest
 
 # ══════════════════════════════════════════════════════════════
 # Stage 1: Build OpenClaw from source
@@ -30,15 +30,15 @@ RUN /usr/sbin/usermod -l "$USER" "$OLD_USER" \
  && /usr/sbin/usermod -d /home/$USER -m $USER \
  && /usr/sbin/groupmod -n $USER $OLD_USER \
  && /bin/echo "$USER:$USER" | /usr/sbin/chpasswd \
- && rm -rf /home/$OLD_USER 
- # && apt-get update \
- # && apt-get install -y --no-install-recommends \
- #            chromium ca-certificates fonts-liberation fontconfig libnss3 \
- #            libxss1 libasound2 libatk-bridge2.0-0 libgtk-3-0 libgbm1 \
- #            libdrm2 libxdamage1 libxrandr2 libxcomposite1 libxfixes3 \
- #            libxkbcommon0 libpango-1.0-0 libcairo2 libatspi2.0-0 libglib2.0-0 \
- #            libdbus-1-3 \
- # && rm -rf /var/lib/apt/lists/*
+ && rm -rf /home/$OLD_USER \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends \
+            gh shellcheck python3-pip pipx \
+ && rm -rf /var/lib/apt/lists/* \
+ && pipx install pre-commit \
+ && curl -sSL \
+    https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-arm64 \
+    -o /usr/local/bin/hadolint && chmod +x /usr/local/bin/hadolint
 
 COPY openclaw-control.sh /usr/bin/openclaw
 # ┌──────────────────────────────────────────────────────────┐
