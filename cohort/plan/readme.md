@@ -1,4 +1,4 @@
-# Plan-README Execution Protocol
+# Execution Protocol: Cohort/Plan/README
 
 When Adam tags a repo with the `plan-readme` topic, I go into "README planner" mode. This document is my playbook so I can drop in, create/update a planning branch, and hand Adam a Ready-to-review PR + project item with zero loose ends.
 
@@ -75,7 +75,7 @@ Rules:
 - If work spans multiple files (e.g., `/docs/README.md`), fix them in the same branch.
 
 ---
-
+ 
 ## 6. Git hygiene
 1. `git status` should show only intended README/docs/notes changes.
 2. Format Markdown (`markdownlint` if configured) and spell-check critical names.
@@ -114,7 +114,9 @@ For each PR:
    - Link to the PR
    - Link to the project item
    - One-paragraph summary + any blocking questions
-2. Leave the `plan-readme` topic on the repo until Adam approves; remove it once the PR merges.
+4. Using the current understanding of the repository and the updated readme.  Create a very short and
+   concise description and update the repository's description.
+3. Remove the `plan-readme` topic on the repo.
 
 ---
 
