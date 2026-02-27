@@ -6,7 +6,9 @@ set -euo pipefail
 # echo "GITHUB_PA_PLAN_TOKEN not set" >&2
 # exit 1
 # fi
-cohort="blairfontaine"
+#
+# cohorts blairfontaine, nyxcalder, devmakhija, rennakatomi
+cohort="rennakatomi"
 repos=$(gh repo list gautada --no-archived --source --limit 1000 --json name --jq '.[].name')
 missing=()
 active=()
@@ -19,9 +21,9 @@ for repo in ${(f)repos}; do
  fi
  if [[ $has_access != true ]]; then
   echo "# PATH = /repos/gautada/${repo}/collaborators/${cohort}"
-  # api_path="/repos/gautada/${repo}/collaborators/${cohort}"
-  # gh api --method PUT -H "Accept: application/vnd.github+json" \
-  #   "$api_path" -f permission=push
+  api_path="/repos/gautada/${repo}/collaborators/${cohort}"
+  gh api --method PUT -H "Accept: application/vnd.github+json" \
+    "$api_path" -f permission=push
   missing+="${repo} *"
  else
   active+=$repo
