@@ -114,7 +114,7 @@ For each PR:
    - Link to the PR
    - Link to the project item
    - One-paragraph summary + any blocking questions
-2. Leave the `plan-readme` topic on the repo until Adam approves; remove it once the PR merges.
+2. Remove the `plan-readme` topic on the repo.
 
 ---
 
