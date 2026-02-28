@@ -1,6 +1,8 @@
 ---
 title: Standard README.md
-owner: Blair Fontainer
+owner: PLAN Agent
+review: This guide is reviewed when a new repo type is introduced or when the fleet-wide process changes.
+exceptions: Exceptions to this standard require Adam's explicit approval and must be documented in the repo's `cohort/plan/notes.md`.
 ---
 
 # Standard README.md
@@ -27,7 +29,7 @@ Every `README.md` **MUST** follow this exact section order. Sections may **NOT**
 4. Table of Contents
 5. Abstract
 6. Features
-7. Roadmap
+- Roadmap REMOVE THIS SECTION.
 8. Build
 9. Install
 10. Run
@@ -198,37 +200,9 @@ Those are implementation facts, not features.
 
 ---
 
-### 7. Roadmap
-
-**What it is:** A snapshot of planned work and known gaps.
-
-**Rules:**
-- Link to the [Eureka FARMS project board](https://github.com/users/gautada/projects/2) first.
-- List open issues that represent planned improvements — by title and issue number.
-- Keep it honest: if something is broken, say so.
-- Update this section when issues close or new ones open. Stale roadmaps are misleading.
-- Do not list completed work here — that's what commit history is for.
-
-**Template:**
-```markdown
-## Roadmap
-
-Tracked in the [Eureka FARMS project board](https://github.com/users/gautada/projects/2).
-
-**Active/planned:**
-- [#102](https://github.com/gautada/alpine/issues/102) — Fix entrypoint signal handling bug
-- [#95](https://github.com/gautada/alpine/issues/95) — Improve default backup script behavior
-- [#43](https://github.com/gautada/alpine/issues/43) — Add status check scripts
-
-**Known gaps:**
-- No automated test suite (tracked in #77)
-```
-
----
-
 ### 8. Build
 
-**What it is:** Step-by-step instructions to build the container image locally.
+**What it is:** Step-by-step instructions to build the container image locally.  This section should be updated and maintained by the CHANGE Agent(Dev Makhija).  They run the CICD script and should follow the workflow to understand what is needed to build the repo.  This section should be the instructions that a human can follow.
 
 **Rules:**
 - Every command must be copy-pasteable as written.
@@ -236,6 +210,7 @@ Tracked in the [Eureka FARMS project board](https://github.com/users/gautada/pro
 - Show the exact `podman build` command used in CI so local and CI builds match.
 - If there are prerequisites (specific Podman version, network access, etc.), state them.
 - Do not skip steps because they seem obvious.
+
 
 **Template:**
 ```markdown
@@ -263,7 +238,7 @@ podman run --rm gautada/alpine:dev /usr/bin/container-version
 
 ### 9. Install
 
-**What it is:** Instructions for deploying the container into the target environment (Kubernetes / MicroK8s).
+**What it is:** Instructions for deploying the container into the target environment (Kubernetes / MicroK8s).  This wull be owned by the SUPPORT Agent(Ren Nakatomi).  
 
 **Rules:**
 - This section is about *deployment*, not development setup.
@@ -307,7 +282,7 @@ kubectl exec -it $(kubectl get pod -l app=postgresql -o name) \
 
 ### 10. Run
 
-**What it is:** How to run the container locally for development or ad-hoc use.
+**What it is:** How to run the container locally for development or ad-hoc use. Again this should documentation be completed by the SUPPORT Agent.  The repo should contain all the required default files and configurations needed (provided by the DEVELOPMENT Agent[Nyx Calder]) to perform an adhoc run.  Again the contents in the section should be provided by Ren Nakatomi the SUPPORT Agent. 
 
 **Rules:**
 - Cover the most common use case first.
@@ -344,7 +319,7 @@ podman exec alpine /usr/bin/container-health
 
 ### 11. Contributing
 
-**What it is:** Instructions for how a team member or external contributor submits a change.
+**What it is:** Instructions for how a team member or external contributor submits a change.  This needs to express the that the project is being actively developed and maintained by AI.  Instructions should take this into account.  This section should be maintained by the PLANNING AGENT (Blair)
 
 **Rules:**
 - This is not optional. Every repo gets a Contributing section.
@@ -380,7 +355,7 @@ All changes flow through `dev` before merging to `main`.
 
 ### 12. Links
 
-**What it is:** A curated list of external references relevant to this project.
+**What it is:** A curated list of external references relevant to this project. This should be a clear list and is mainly used by the PLANNING Agent to monitor/reference upstraem repos, websites, chatrooms, etc. to help build the roadmap.
 
 **Rules:**
 - Include: upstream project, Docker Hub page, GitHub repo (if this is a mirror or fork), and any relevant docs.
@@ -403,7 +378,7 @@ All changes flow through `dev` before merging to `main`.
 
 ### 13. License
 
-**What it is:** The license governing use and distribution of this project.
+**What it is:** The license governing use and distribution of this project.  IF the project uses or extends another project like a container of alpine.  The license should be the upstream license.  If there is no upstream project then this should be the most open opensource liscense. IF upstream license cannot be determined then a bug needs to be assigned to Adam to fix.  Blair should maintain this but OWNER (Adam) can override. 
 
 **Rules:**
 - One line, linking to the `LICENSE` file in the repo.
@@ -426,7 +401,6 @@ Some sections may not apply to every repo. Use this table to decide:
 | Section | May omit when... |
 | --- | --- |
 | Table of Contents | README is under 30 lines (rare) |
-| Roadmap | Repo is archived or maintenance-only |
 | Build | Image is not built from source in this repo |
 | Install | This is a base image not deployed directly |
 | Run | Same as Install; add a note instead |
@@ -450,10 +424,3 @@ Before committing a README update, verify:
 - [ ] Contributing section references the `dev` branch and PR process
 - [ ] Links section tested — no dead links
 
----
-
-## Maintenance
-
-- **Owner:** Blair Fontaine — all structural changes to this guide go through Blair.
-- **Review cycle:** This guide is reviewed when a new repo type is introduced or when the fleet-wide process changes.
-- **Exceptions:** Exceptions to this standard require Adam's explicit approval and must be documented in the repo's `cohort/plan/notes.md`.
