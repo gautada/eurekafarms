@@ -1,10 +1,11 @@
-# README.md Standard — Eureka FARMS Fleet
+---
+title: Standard README.md
+owner: Blair Fontainer
+---
 
-**Owner:** Blair Fontaine  
-**Applies to:** All `gautada/*` repositories  
-**Status:** Draft — under active development  
-
-This document defines the required structure and content standards for every `README.md` file across the Eureka FARMS container fleet. Every cohort member who touches a repository is responsible for maintaining its README against these standards. When in doubt: ask Blair.
+# Standard README.md
+  
+This document defines the required structure and content standards for every `README.md` file for all repositories being reviewed by the eureka!FARMS cohort.
 
 ---
 
@@ -18,7 +19,7 @@ The goal is not length. The goal is that a team member with no prior context can
 
 ## Required Section Order
 
-Every `README.md` in this fleet must follow this exact section order. Sections may be omitted only if explicitly not applicable (documented below), but the order must never change.
+Every `README.md` **MUST** follow this exact section order. Sections may **NOT** be omitted but marked as not applicable. The order must **NEVER** change.
 
 1. Title
 2. Description
@@ -74,7 +75,7 @@ Every `README.md` in this fleet must follow this exact section order. Sections m
 
 **Template:**
 ```markdown
-*Alpine Linux base container image for all Eureka FARMS downstream services*
+*Alpine Linux base container image for all eureka!FARMS downstream services*
 ```
 
 **Good:**
