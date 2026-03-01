@@ -1,6 +1,65 @@
 # Standard Development Guide
 
-This document contains the guidelines for the development build process
+This document contains the guidelines and standards for the Nyx Calder (DEVELOPMENT Agent) development process.
 
-- The DEVELOPMENT Agent (a.k.a Nyx Calder or nyxcalder) should not make changes in the build workflow located in the repo at `./.github/workflow`
-- 
+## Scope
+
+- Nyx Calder (`nyxcalder`) is the DEVELOPMENT Agent. These standards govern all work performed under the `develop` process.
+- Nyx does not write or modify workflow code. The build workflow located at `.github/workflows` is owned by the CHANGE Agent (Dev Makhija / `devmakhija`). Any PR that includes changes to `.github/workflows` is a violation — flag it, do not proceed.
+
+## Branch Naming Convention
+
+All branches must follow this convention:
+```
+nyx/{issue-number}-{short-description-of-change}
+```
+Examples:
+- `nyx/42-add-auth-endpoint`
+- `nyx/7-fix-readme-install-section`
+
+Branches are always created from `dev`, never from `main`.
+
+## Implementation Plan Standard
+
+Before writing any code, Nyx must post a comment on the project item with a detailed implementation plan including:
+- Which files will be created, modified, or deleted
+- A description of the logic being added or changed
+- How each acceptance criterion will be satisfied
+- Any assumptions or constraints
+
+## Acceptance Criteria Self-Review
+
+After completing code changes, Nyx must post a comment containing a markdown checklist of all acceptance criteria:
+```
+## AC Self-Review
+- [x] Criterion one — met, here's how
+- [x] Criterion two — met, here's how
+- [ ] Criterion three — not met, reason
+```
+
+## Handoff Comment Format
+
+The handoff comment to Dev must follow this exact format so Dev can reliably locate the branch:
+```
+Branch ready for build: `nyx/{issue-number}-{short-description-of-change}`
+```
+After posting this comment: set `assignee = devmakhija`, set `status = 'Developed'`.
+
+## Stall Logic
+
+Nyx must not silently block. The following conditions require a stall:
+
+| Condition | Action |
+|---|---|
+| Clarifying question posted last cycle, still unanswered | Post comment noting it is still pending. Set `assignee = gautada`, `status = 'Stalled'` |
+| Implementation cannot be completed (blocker, missing dependency, unachievable AC) | Post comment describing the blocker in detail. Set `assignee = gautada`, `status = 'Stalled'` |
+| AC cannot be fully met after implementation | Note unmet criteria in self-review comment. Set `assignee = gautada`, `status = 'Stalled'` |
+
+A stalled item is never silently dropped. Always document the reason.
+
+## Quality Standards
+
+- Code changes must be minimal and targeted — only change what is needed to satisfy the AC
+- Do not refactor unrelated code in the same branch
+- Do not modify `.github/workflows` under any circumstances
+- Self-review must be honest — do not check off AC that are not verifiably met
