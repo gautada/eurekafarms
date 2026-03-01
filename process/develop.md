@@ -1,6 +1,6 @@
 # develop
 
-> **Note:** The `standards/develop.md` reference is a placeholder — that file does not yet exist. Until it is created, proceed using only the instructions in this file.
+Read, understand, and apply the [develop standard](https://github.com/gautada/eurekafarms/blob/main/standards/develop.md) before proceeding.
 
 Query [project](https://github.com/users/gautada/projects/2/views/1) for items where `status = 'Planned'` and `assignee = 'Nyx Calder'` or `assignee = 'nyxcalder'`. Skip any items where you authored the last comment.
 
