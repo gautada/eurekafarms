@@ -21,8 +21,8 @@ Query [project](https://github.com/users/gautada/projects/2/views/1) for items w
 
 - **Self-review** — review your changes against each acceptance criterion. Post a new comment with a markdown checklist of all acceptance criteria, marking each as met or not met.
 
-- **Hand off to Dev** — post a comment in the following format so Dev can reliably locate the branch:
+- **Hand off to Adam for review** — post a comment in the following format so the branch is clearly identified:
   ```
-  Branch ready for build: `nyx/{issue-number}-{short-description-of-change}`
+  Branch ready for review: `nyx/{issue-number}-{short-description-of-change}`
   ```
-  Then set `assignee = devmakhija` and set `status = 'Developed'`.
+  Then set `assignee = gautada` and set `status = 'Developed'`.
