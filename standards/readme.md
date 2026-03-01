@@ -29,13 +29,12 @@ Every `README.md` **MUST** follow this exact section order. Sections may **NOT**
 4. Table of Contents
 5. Abstract
 6. Features
-- Roadmap REMOVE THIS SECTION.
-8. Build
-9. Install
-10. Run
-11. Contributing
-12. Links
-13. License
+7. Build
+8. Install
+9. Run
+10. Contributing
+11. Links
+12. License
 
 ---
 
@@ -90,29 +89,7 @@ That's a how, not a what. And it's two sentences.
 
 ---
 
-### 3. Badges
-
-**What it is:** A row of inline status images immediately below the description.
-
-**Rules:**
-- All badges on a single line, separated by a space.
-- Always include: Build Status, Latest Image Version, License.
-- Optionally include: upstream version, last commit date.
-- Use [Shields.io](https://shields.io/) for consistent style across the fleet.
-- Never badge things that aren't automated — a badge that goes stale is worse than no badge.
-
-**Standard badge set for container repos:**
-```markdown
-![Build](https://github.com/gautada/<repo>/actions/workflows/cicd.yaml/badge.svg)
-![Version](https://img.shields.io/github/v/tag/gautada/<repo>?label=version&sort=semver)
-![License](https://img.shields.io/github/license/gautada/<repo>)
-```
-
-**Replace `<repo>` with the repository name for each project.**
-
----
-
-### 4. Table of Contents
+### 3. Table of Contents
 
 **What it is:** A list of anchor-linked jump targets covering every section in the README.
 
@@ -126,8 +103,7 @@ That's a how, not a what. And it's two sentences.
 ```markdown
 ## Table of Contents
 - [Abstract](#abstract)
-- [Features](#features)
-- [Roadmap](#roadmap)
+- [Features](#features
 - [Build](#build)
 - [Install](#install)
 - [Run](#run)
