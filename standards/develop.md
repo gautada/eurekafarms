@@ -39,11 +39,13 @@ After completing code changes, Nyx must post a comment containing a markdown che
 
 ## Handoff Comment Format
 
-The handoff comment to Dev must follow this exact format so Dev can reliably locate the branch:
+The handoff comment to Adam must follow this exact format so the branch is clearly identified:
 ```
-Branch ready for build: `nyx/{issue-number}-{short-description-of-change}`
+Branch ready for review: `nyx/{issue-number}-{short-description-of-change}`
 ```
-After posting this comment: set `assignee = devmakhija`, set `status = 'Developed'`.
+After posting this comment: set `assignee = gautada`, set `status = 'Developed'`.
+
+Adam reviews the work and — when satisfied — reassigns to `devmakhija` to trigger integration.
 
 ## Stall Logic
 
