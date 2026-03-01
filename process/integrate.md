@@ -12,7 +12,7 @@ Query [project](https://github.com/users/gautada/projects/2/views/1) for items w
   - If no branch name comment from Nyx can be found, post a comment noting the missing branch information, set `assignee = gautada`, set `status = 'Stalled'`, skip to next item.
   <!-- TODO: When Nyx reliably posts branch names as part of handoff, update this to re-assign to nyxcalder instead of stalling to gautada -->
 
-- **Create PR** — create a PR from `{branch}` → `dev`. Do NOT use `Closes #N` or `Fixes #N` in the PR body — the issue remains open until release.
+- **Create PR** — create a PR from `{branch}` → `dev`. Include `References #N` in the PR body (where `N` is the issue number) so the item is linked to this PR. Do NOT use `Closes #N` — the issue remains open until release.
 
 - **Add a comment** to the item with a link to the PR.
 
