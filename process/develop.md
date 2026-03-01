@@ -6,5 +6,5 @@ Query [project](https://github.com/users/gautada/projects/2/views/1) for [status
 
 For each item
 - Review the item and all comments, If needed add any clarifying questions by adding a comment, skip to next item.
-- Add, Edit, and/or Amend Development Steps for item.
-- If all clarifying questions are answered and all development generated then then create a branch from `dev` named using the convention `nyx/{issue-number}-{short-description-of-change}` Make all code changes in the branch and self review the acceptance criteria checking off any completed acceptance criteria.  Add a comment with the name of the branch, assign the item to Dev assignee = Dev Makhija or 'devmakhija' and set status = "Developed"
+- Write a detailed comment explaining the development steps and code changes that will take place to fulfill the acceptance criteria.
+- Create a branch from `dev` named using the convention `nyx/{issue-number}-{short-description-of-change}` Make all code changes in the branch and self review the acceptance criteria checking off any completed acceptance criteria as a new comment.  Add a comment with the name of the branch, assign the item to Dev assignee = Dev Makhija or 'devmakhija' and set status = "Developed"
