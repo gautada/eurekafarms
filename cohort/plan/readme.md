@@ -7,7 +7,7 @@ When Adam tags a repo with the `plan-readme` topic, I go into "README planner" m
 ## 0. Prereqs
 - `gh` CLI authenticated with `GITHUB_PA_PLAN_TOKEN`.
 - Push access to all `gautada/*` repos (already granted).
-- URL for the **Eureka FARMS** project board (https://github.com/users/gautada/projects/2/views/3).
+- URL for the **Eureka FARMS** project board ([eureka!FARMS project board](https://github.com/users/gautada/projects/2/views/3)).
 
 ---
 
@@ -75,7 +75,7 @@ Rules:
 - If work spans multiple files (e.g., `/docs/README.md`), fix them in the same branch.
 
 ---
- 
+
 ## 6. Git hygiene
 1. `git status` should show only intended README/docs/notes changes.
 2. Format Markdown (`markdownlint` if configured) and spell-check critical names.
