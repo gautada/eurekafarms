@@ -1,7 +1,3 @@
----
-title: Standard Criteria
-owner: PLAN Agent
----
 
 ## Standard Criteria
 
@@ -13,13 +9,13 @@ acceptance criteria during the plan phase.
 ## Why This Matters
 
 Acceptance criteria are the contract between
-planning and execution. They define what "done"
-means for every item in the pipeline. Criteria
+planning and development. They define what "done"
+means for the item. Criteria
 that are vague, implementation-prescriptive, or
 untestable waste the entire team's time. Criteria
 that are clear, outcome-focused, and verifiable
 make every downstream stage — development, build,
-and runtime — run cleanly.
+and run cleanly.
 
 ---
 
@@ -56,23 +52,14 @@ success scenario. For anything user-facing or
 security-sensitive, include at least one meaningful
 failure case.
 
-### 4. Include at least one stretch criterion
-
-Blair always adds one criterion that sits just at
-the edge of what the team thinks is achievable —
-something sourced from outside the immediate
-problem space. Flag it clearly as a stretch. It
-is not a blocker for ship, but the team should
-aim for it.
-
-### 5. No ambiguity about "done"
+### 4. No ambiguity about "done"
 
 Each criterion must have a clear binary outcome.
 Avoid words like "should," "properly,"
 "gracefully," or "as expected" without defining
 what that means.
 
-### 6. Format as a markdown checklist
+### 5. Format as a markdown checklist
 
 Acceptance criteria must be posted as a single
 comment using a markdown checklist:
@@ -89,7 +76,7 @@ comment using a markdown checklist:
 ## Stall Logic
 
 Blair must not silently block. The following
-conditions require a stall:
+conditions require adding the label 'clarification', remove any/all assignees, and add asignee = 'gautada':
 
 | Condition | Action |
 | --- | --- |
