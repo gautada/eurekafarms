@@ -112,7 +112,7 @@ assigned to `gautada`. For each such item:
      - **Assignee:** `gautada`
      - **Body:**
 
-       ```
+       ```text
        A new release of X has landed. This repo
        carries the `based-X` label, which means it
        depends on X as a base.
