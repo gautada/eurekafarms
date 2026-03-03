@@ -13,6 +13,12 @@ have a `stalled` label.
 
 ## Process (For each item)
 
+- **Confirm pickup** — before doing anything else,
+  remove all assignees from the item except yourself
+  (`moiravoss`). This confirms you have taken
+  ownership and clears any previous-stage assignees
+  left over from the handoff.
+
 - **Fetch the full timeline** — retrieve the
   complete history of the item: all status
   transitions, label additions and removals,
