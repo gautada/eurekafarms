@@ -8,22 +8,34 @@ Query
 [project](https://github.com/users/gautada/projects/2/views/1)
 for items where `status = 'Planned'` and
 `assignee = 'Nyx Calder'` or
-`assignee = 'nyxcalder'`. Skip any items where you
-authored the last comment.
+`assignee = 'nyxcalder'`. Exclude any items that
+have a `stalled` label — those belong to Adam and
+must not be touched.
+
+## Stalled Check
+
+Before processing any items, also check for items
+you have previously commented on that carry a
+`clarification` label and are assigned to
+`gautada`. For each such item:
+
+- If the most recent activity (comment, label change,
+  or assignment change) is more than 2 hours old:
+  apply a `stalled` label to the item. Leave the
+  `clarification` label and `assignee = gautada`
+  unchanged. Do not comment.
+- If the most recent activity is within 2 hours:
+  skip — Adam is working on it.
 
 ## Process (For each item)
 
 - **Review** the item and all comments in full. Read
   the acceptance criteria carefully.
-  - If the item already has a `clarification` label:
-    - If no new comment from someone other than you exists since your last question:
-      - If your last question was posted more than 2 hours ago: remove the `clarification` label, add a `stalled` label, set `assignee = gautada`, skip to the next item.
-      - Otherwise: skip this item without commenting.
-    - If your question has been answered: remove the `clarification` label and continue processing.
   - If clarification is needed: post a comment with
-    your specific question(s). Apply the `clarification`
-    label. Remove any existing assignees and set
-    `assignee = gautada`. Skip to the next item.
+    your specific question(s). Apply the
+    `clarification` label. Set `assignee = gautada`.
+    Skip to the next item. Adam will remove the
+    label and reassign to you when resolved.
 
 - **Write an implementation plan** — post a detailed
   comment explaining the development steps and code
@@ -43,20 +55,20 @@ authored the last comment.
   (missing dependency, blocked by another issue,
   acceptance criteria are unachievable as written):
   post a comment describing the blocker in detail.
-  Apply the `clarification` label. Remove any existing
-  assignees and set `assignee = gautada`. Stop
-  processing this item.
+  Apply the `clarification` label. Set
+  `assignee = gautada`. Stop processing this item.
+  Adam will remove the label and reassign when
+  resolved.
 
 - **Self-review** — review your changes against each
   acceptance criterion. Post a new comment with a
   markdown checklist of all acceptance criteria,
   marking each as met or not met.
-  - If any acceptance criteria are not met: add a
+  - If any acceptance criteria are not met: apply a
     `criteria` label to the item and note the reason
     for each unmet criterion in the self-review
-    comment. Do not remove this label — it is a
-    permanent flag that follows the item through the
-    pipeline. Continue to handoff regardless.
+    comment. This label is permanent and never
+    removed. Continue to handoff regardless.
 
 - **Hand off to Adam for review** — post a comment in
   the following format so the branch is clearly
@@ -66,8 +78,5 @@ authored the last comment.
   Branch ready for review: `nyx/{issue-number}-{short-description-of-change}`
   ```
 
-  Then remove any existing assignees, remove the
-  `clarification` label if applied, set
-  `assignee = gautada`, and set
-  `status = 'Developed'`. Do not remove the `criteria`
-  label if applied.
+  Then set `assignee = gautada` and set
+  `status = 'Developed'`.
