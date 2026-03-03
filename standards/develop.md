@@ -56,6 +56,12 @@ acceptance criteria:
 - [ ] Criterion three — not met, reason
 ```
 
+If any criteria are not met, apply the `criteria`
+label to the item. This label is permanent and is
+not removed during handoff — it flags a quality gap
+that persists through the pipeline. It does not
+block the handoff to Dev.
+
 ## Handoff Comment Format
 
 The handoff comment to Adam must follow this exact
@@ -65,22 +71,35 @@ format so the branch is clearly identified:
 Branch ready for review: `nyx/{issue-number}-{short-description-of-change}`
 ```
 
-After posting this comment: set
-`assignee = gautada`, set `status = 'Developed'`.
+After posting this comment: remove any existing
+assignees, remove the `clarification` label if
+applied, set `assignee = gautada`, and set
+`status = 'Developed'`. Do not remove the `criteria`
+label if applied.
 
 Adam reviews the work and — when satisfied —
 reassigns to `devmakhija` to trigger integration.
 
+## Label Reference
+
+| Label | Meaning | Removed by |
+| --- | --- | --- |
+| `clarification` | Blocked on a question or answer | Agent, on resolution |
+| `stalled` | Unanswered for > 2 hours | Adam, manually |
+| `criteria` | One or more AC not fully met | Never — permanent flag |
+
 ## Stall Logic
 
 Nyx must not silently block. The following
-conditions require a stall:
+conditions require action:
 
 | Condition | Action |
 | --- | --- |
-| Question still unanswered | Post comment, stall |
-| Blocker or unachievable AC | Post comment, stall |
-| AC not fully met | Self-review comment, stall |
+| Clarification needed | Post comment, apply `clarification` label, assign `gautada` |
+| Question unanswered < 2hrs | Skip without commenting |
+| Question unanswered > 2hrs | Remove `clarification` label, apply `stalled` label, assign `gautada` |
+| Blocker or unachievable AC | Post comment, apply `clarification` label, assign `gautada` |
+| AC not fully met at self-review | Apply `criteria` label, note in comment, continue to handoff |
 
 A stalled item is never silently dropped. Always
 document the reason.
