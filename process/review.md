@@ -34,4 +34,9 @@ have a `stalled` label.
   text directly to Adam via Slack so he sees it
   without having to open the issue.
 
-- **Close the item** — close the issue to archive it.
+- **Archive the item** — close the GitHub issue and
+  archive the project item so it is removed from the
+  active board. Use `gh project item-archive` to
+  archive the item from project #2. The item should
+  no longer appear in any active project view after
+  this step.
