@@ -17,7 +17,7 @@ authored the last comment.
   the acceptance criteria carefully.
   - If the item already has a `clarification` label:
     - If no new comment from someone other than you exists since your last question:
-      - If your last question was posted more than 2 hours ago: remove all existing labels, add a `stalled` label, set `assignee = gautada`, skip to the next item.
+      - If your last question was posted more than 2 hours ago: remove the `clarification` label, add a `stalled` label, set `assignee = gautada`, skip to the next item.
       - Otherwise: skip this item without commenting.
     - If your question has been answered: remove the `clarification` label and continue processing.
   - If clarification is needed: post a comment with
@@ -51,6 +51,12 @@ authored the last comment.
   acceptance criterion. Post a new comment with a
   markdown checklist of all acceptance criteria,
   marking each as met or not met.
+  - If any acceptance criteria are not met: add a
+    `criteria` label to the item and note the reason
+    for each unmet criterion in the self-review
+    comment. Do not remove this label — it is a
+    permanent flag that follows the item through the
+    pipeline. Continue to handoff regardless.
 
 - **Hand off to Adam for review** — post a comment in
   the following format so the branch is clearly
@@ -60,5 +66,8 @@ authored the last comment.
   Branch ready for review: `nyx/{issue-number}-{short-description-of-change}`
   ```
 
-  Then remove any existing assignees, set
-  `assignee = gautada`, and set `status = 'Developed'`.
+  Then remove any existing assignees, remove the
+  `clarification` label if applied, set
+  `assignee = gautada`, and set
+  `status = 'Developed'`. Do not remove the `criteria`
+  label if applied.
