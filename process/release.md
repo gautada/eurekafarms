@@ -29,6 +29,12 @@ assigned to `gautada`. For each such item:
 
 ## Process (For each item)
 
+- **Confirm pickup** — before doing anything else,
+  remove all assignees from the item except yourself
+  (`blairfontaine`). This confirms you have taken
+  ownership and clears any previous-stage assignees
+  left over from the handoff.
+
 - **Review** the item and all comments in full.
   - If clarification is needed: post a comment with
     your specific question(s). Apply the
@@ -128,5 +134,6 @@ assigned to `gautada`. For each such item:
   will eventually be handled by Ren after runtime
   checks are in place.
 
-- **Hand off to Moira** — set `status = 'Done'` and
-  set `assignee = moiravoss`.
+- **Hand off to Moira** — add `moiravoss` as an
+  assignee. Do not remove yourself. Set
+  `status = 'Done'`.
