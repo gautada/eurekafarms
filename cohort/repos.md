@@ -1,6 +1,6 @@
-# Fleet
+# Repos
 
-This is an organized list of the repositories that comprise the list that the cohorts should consider, basically this is the scope.
+This is an organized list of the repositories that comprise the list that the cohorts should consider when managing.
 
 | Repo | Last Updated | Status |
 |---|---|---|
