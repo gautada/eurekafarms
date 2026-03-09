@@ -10,7 +10,7 @@ This is an organized list of the repositories that comprise the list that the co
 | cicd | 2026-03-08 | Active | | |
 | devpi | 2026-03-06 | Active | | |
 | github-action-runner | 2026-03-06 | Active | | |
-| coredns | 2026-03-05 | Active | | |
+| coredns | 2026-03-05 | Active | kube-system | X.Y.Z |
 | prometheus | 2026-03-05 | Active | telemetry | latest |
 | pgweb | 2026-03-05 | Active | data | 0.16.2 |
 | java | 2026-03-04 | Active | | |
