@@ -8,8 +8,8 @@ ARG BASE_VERSION=latest
 # Stage 1: Build OpenClaw from source
 # ══════════════════════════════════════════════════════════════
 # FROM docker.io/library/node:22-trixie AS builder
-# FROM docker.io/gautada/openclaw:$BASE_VERSION AS container
-FROM docker.io/gautada/debian:13.3 AS container
+FROM docker.io/gautada/openclaw:$BASE_VERSION AS container
+# FROM docker.io/gautada/debian:13.3 AS container
 
 # ┌──────────────────────────────────────────────────────────┐
 # │ Metadata                                                 │
@@ -48,11 +48,11 @@ RUN mkdir -p /etc/apt/keyrings \
  && pipx install --global pre-commit \
  && curl -sSfL https://raw.githubusercontent.com/dotenv-linter/dotenv-linter/master/install.sh | sh -s -- -b /usr/local/bin
 
-RUN apt-get update \
- && apt-get install --yes --no-install-reccomends ripgrep nodejs npm 
+# RUN apt-get update \
+#  && apt-get install --yes --no-install-reccomends ripgrep nodejs npm 
 
 # COPY openclaw-control.sh /usr/bin/openclaw
-# COPY bin/github-project-status-check.sh /usr/bin/github-project-status-check 
+COPY bin/github-project-status-check.sh /usr/bin/github-project-status-check 
 # ┌──────────────────────────────────────────────────────────┐
 # │ Service Configuration                                    │
 # └──────────────────────────────────────────────────────────┘
