@@ -23,9 +23,11 @@ LABEL org.opencontainers.image.documentation="https://github.com/gautada/eurekaf
 # ┌──────────────────────────────────────────────────────────┐
 # │ Application User                                         │
 # └──────────────────────────────────────────────────────────┘
+# Tools and such for the cohort that are just avaialable in the
+# typical debian repos.
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-            gh shellcheck python3-pip pipx gnupg \
+            gh shellcheck python3-pip pipx gnupg git \
  && rm -rf /var/lib/apt/lists/* \
  && pipx install pre-commit \
  && curl -sSL \
@@ -41,7 +43,7 @@ RUN mkdir -p /etc/apt/keyrings \
  && echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /' \
     > /etc/apt/sources.list.d/kubernetes.list \
  && apt-get update \
- && apt-get install --yes --no-install-recommends kubectl git \
+ && apt-get install --yes --no-install-recommends kubectl \
  && apt-get purge --yes gnupg \
  && apt-get autoremove --yes \
  && rm -rf /var/lib/apt/lists/* \
