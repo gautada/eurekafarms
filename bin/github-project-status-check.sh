@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 # github-project-status-check.sh
 # Lists GitHub project issues in a specific status assigned to a specific user.
 # Outputs a JSON array of matching issues.
