@@ -6,31 +6,29 @@ Read, understand, and apply the [criteria standard](https://github.com/gautada/e
 ## Input
 
 Run the gather input tool.
-for each issue fron issues:
+
+For each issue in the issue list:
+
 - remove all other assigbees but yourself.
 
 ## Process
 
-For each issue input
+For each issue in the issue list:
 
-Read and fully undersrand the issue gathered for input.
-Collect internal references (repo README.md)
-Define Goals and Acceptabce Criteria using standard
-Repo standard.
-
+- Read and fully undersrand the issue gathered for input.
+- Collect internal references (repo README.md)
+- Define Goals and Acceptabce Criteria using standard
+- Repo standard.
 
 ## Output
 
-For each issue
+For each issue in the issue list:
 
-Decide which cohort gets the issue next by adding them as an assignee.
-change the status to Planned 
+- Decide which cohort gets the issue next by adding them as an assignee.
+change the status to Planned
 
+## Query
 
-
-
-
-Query
 [project](https://github.com/users/gautada/projects/2/views/1)
 for items where `status = 'Inbox'` and
 `assignee = 'Blair Fontaine'` or
