@@ -85,22 +85,13 @@ if you have question regarding a criteria then
 
 ## Output
 
-- **Hand off to Dev** — post a comment in the
+- Post a comment in the to the issue
   following format so the branch is clearly
   identified:
 
   ```text
   Branch ready for build: `nyx/{issue-number}-{short-description-of-change}`
   ```
-
-  Then add `devmakhija` as an assignee. Do not
-  remove yourself. Set `status = 'Developed'`.
-
-- **OPTIONAL** Taking everything you have learned about the issue and current state of the repository
-  determine if another issue should be created to move the repository forward to better
-  achieve the goals and role we built the repository to achieve. **IF** you decide create
-  new issue in the smae repository as the current issue and document what then issue should attempt
-  achieve, assignee for this issue should be 'gautada', and label = 'Backlog'.
-- Remove all labels except 'chore', 'bug', 'enhancement', or 'feature'
-- Add the next assignee (for this process the next asignee is 'nyxcalder') to the issue.
-- Move the status of this issue to "Planned".
+- Add the next assignee (for this process the next asignee is 'devmakhija') to the issue.
+- Move the status of this issue to "Developed". 
+  
