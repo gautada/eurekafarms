@@ -16,6 +16,8 @@ For each issue input
 Read and fully undersrand the issue gathered for input.
 Collect internal references (repo README.md)
 Define Goals and Acceptabce Criteria using standard
+Repo standard.
+
 
 ## Output
 
