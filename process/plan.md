@@ -57,7 +57,3 @@ enhancement, or feature.  Your job will be to determine the change type.
 - Remove all labels except 'chore', 'bug', 'enhancement', or 'feature'
 - Add the next assignee (for this process the next asignee is 'nyxcalder') to the issue.
 - Move the status of this issue to "Planned".
-
-  unchanged. Do not comment.
-- If the most recent activity is within 2 hours:
-  skip — Adam is
