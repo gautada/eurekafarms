@@ -1,8 +1,8 @@
 # code
 
 Read, understand, and apply the
-[develop standard](https://github.com/gautada/eurekafarms/blob/main/standards/develop.md)
-before proceeding.
+[develop](https://github.com/gautada/eurekafarms/blob/main/standards/develop.md)
+standard before proceeding.
 
 ## Input
 
