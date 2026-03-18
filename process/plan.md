@@ -10,10 +10,10 @@ in the list.
 
 ## Process
 
-- Remove all other assigbees but yourself.
-- Read and fully undersrand the issue gathered for input.
+- Remove all other assignees but yourself.
+- Read and fully understand the issue gathered for input.
 - Collect internal references (like the repository and README.md)
-- Check and load your latest memory regarding this repostiry
+- Check and load your latest memory regarding this repository
 
 ### Open Questions
 
