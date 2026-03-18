@@ -82,4 +82,4 @@ in the list.
 
 - Remove all labels except 'chore', 'bug', 'enhancement', or 'feature'
 - Add the next assignee (for this process the next asignee is 'moiravoss') to the issue.
-- Move the status of this issue to "Done".
+- Move the status of this issue to "Released".
