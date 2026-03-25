@@ -49,7 +49,7 @@ if you have question regarding a criteria then
   convention:
 
   ```text
-  nyx/{issue-number}-{short-description-of-change}
+  nyx-{issue-number}-{short-description-of-change}
   ```
 
   Add a new comment as
