@@ -52,12 +52,20 @@ in the list.
     suffix `container`).
   - Fetch the source file from the `gautada/cicd`
     repository at the path
-    `templates/cicd/{suffix}.yaml`.
-  - Compare it byte-for-byte against the destination
-    file `.github/workflows/cicd.yaml` in the item's
+    `templates/cicd/${suffix}.yaml`.
+  - Check for the existence of the destination file
+    `.github/workflows/cicd.yaml` in the item's
     repository on the **default branch** (`main`).
-  - If the files differ (or the destination does not
-    exist): copy the source file to
+  - If the destination file **does not exist**:
+    create the directory `.github/workflows/` (if
+    missing), copy the source file to
+    `.github/workflows/cicd.yaml` in the item's
+    repository, commit directly to the **feature
+    branch** that Nyx prepared, and note the change
+    in a comment on the item.
+  - If the destination file **exists**: compare it
+    byte-for-byte against the source file. If they
+    differ, copy the source file to
     `.github/workflows/cicd.yaml` in the item's
     repository, commit directly to the **feature
     branch** that Nyx prepared, and note the change
