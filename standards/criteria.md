@@ -75,3 +75,13 @@ must be tagged with its pipeline stage:
 - [ ] [Run] Criterion three
 - [ ] (Stretch) [Run] Criterion four
 ```
+
+---
+
+## Stage Tags Reference
+
+| Tag | Stage | Owner | When verified |
+|---|---|---|---|
+| `[Develop]` | Development | Nyx | Before PR is opened |
+| `[Integrate]` | Integration | Dev | After merge to `dev`, CI passing |
+| `[Run]` | Runtime | Ren | In production / running instance |

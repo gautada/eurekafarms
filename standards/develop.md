@@ -45,9 +45,7 @@ including:
 
 ## Acceptance Criteria Self-Review
 
-After completing code changes, Nyx must post a
-comment containing a markdown checklist of all
-acceptance criteria:
+After completing code changes, Nyx must run `pre-commit run --all-files` (or equivalent linting/static analysis tool configured for the repository) and fix any identified issues. Once passing, Nyx must post a comment containing a markdown checklist of all acceptance criteria:
 
 ```markdown
 ## AC Self-Review
