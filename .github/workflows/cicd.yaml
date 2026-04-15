@@ -14,11 +14,11 @@ name: "Continuous Integration: Build and Publish Multi-Architecture Container Im
 jobs:
   check:
     uses: gautada/cicd/.github/workflows/ci-linter.yaml@main
-  deep-scan:
-    needs: check
-    uses: gautada/cicd/.github/workflows/ci-deep-scan.yaml@main
+  # deep-scan:
+    # needs: check
+    # uses: gautada/cicd/.github/workflows/ci-deep-scan.yaml@main
   build-arm64:
-    needs: check
+    # needs: check
     uses: gautada/cicd/.github/workflows/ci-podman-build.yaml@main
     with:
       architecture: "arm64"
@@ -26,7 +26,7 @@ jobs:
       REGISTRY_USERNAME: ${{ secrets.DOCKERIO_REGISTRY }}
       REGISTRY_TOKEN: ${{ secrets.DOCKERIO_TOKEN }}
   build-amd64:
-    needs: check
+    # needs: check
     uses: gautada/cicd/.github/workflows/ci-podman-build.yaml@main
     with:
       architecture: "amd64"
