@@ -49,3 +49,8 @@ channel.
 In shared channels (like `#2-development`), agents operate in **Mention Mode**. They only process and respond to messages that explicitly tag them (e.g., `@nyxcalder ...`). 
 
 If you post a message without an @mention, the agents will remain silent. To get a response, always tag the specific agent you are addressing.
+
+### Best Practices
+- **Explicit Mention:** Always use `@agentname` at the start or within your message.
+- **Agent Selection:** Mention the agent whose role matches your request (e.g., `@blairfontaine` for planning, `@nyxcalder` for code).
+- **Direct Messages:** In DMs with an agent, @mentions are not required.
