@@ -27,13 +27,17 @@ Go to OAuth & Permissions → Bot Token Scopes, add:
 - `im:history`
 - `im:write`
 - `reactions:write`
-- `files:read` ← **required** so Slack includes the `files[]` payload on inbound messages
+- `files:read` ← **required** so Slack includes the `files[]` payload
+  on inbound messages
 - `files:write`
 
 Click Install to Workspace → copy the Bot User
 OAuth Token (xoxb-...).
 
-> **Note:** Slack will only include attached-file metadata in `message.*` events when the bot has `files:read`. Without it, uploads appear as plain text on the agent side even though Slack shows the file in the DM or channel.
+> **Note:** Slack will only include attached-file metadata in `message.*`
+> events when the bot has `files:read`. Without it, uploads appear
+> as plain text on the agent side even though Slack shows the file
+> in the DM or channel.
 
 ### Step 4 — Subscribe to Events
 
@@ -46,11 +50,27 @@ these Bot Events:
 - `message.im`
 - `message.mpim`
 
-### Step 5 — Enable Messages Tab (for DMs)
+---
 
-Go to **App Home** → enable Messages Tab.
+## Shared Channel Behavior
 
-### Step 6 — Add to openclaw.json
+In shared multi-agent channels (like `#2-development`), agents typically operate
+in **Mention Mode** (configured via `ackReactionScope: "group-mentions"`).
+
+### What to Expect
+
+- **Agents stay silent** unless you explicitly @mention them
+  (e.g., `@nyxcalder ...`).
+- **No auto-acknowledgement** (emoji reactions) will appear for messages that
+  don't tag an agent.
+- If you need a response from a specific agent, you **must** tag them.
+
+This configuration is intended to keep channels quiet and prevent multiple
+agents from competing to reply to general chat.
+
+---
+
+## Step 6 — Add to openclaw.json
 
 channels:
 
