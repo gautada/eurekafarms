@@ -33,7 +33,8 @@ Espanso is a cross‑platform, open-source text expander. Once installed, typing
 
 1. In Slack (DM with Nyx or `#2-development`), type `;;hb` and hit **space**.  
 2. Espanso replaces it with the full heartbeat text automatically.  
-3. Add any extra context (current time, channel, etc.) **after** the expansion if needed, then send.
+3. **Important:** In shared channels, you must explicitly tag the agent (e.g., `@nyxcalder`) after the expansion so they process the message.  
+4. Send the message and wait for the agent’s acknowledgement.
 
 ### Verification
 

@@ -1,6 +1,14 @@
 # Import this file into ~/.config/espanso/match/ to create the heartbeat snippet.
 matches:
   - trigger: ";;hb"
-    replace: "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats."
+    replace: |
+      Read HEARTBEAT.md if it exists (workspace context). Follow it strictly.
+      Do not infer or repeat old tasks from prior chats.
+      Current time: {{current_time}}
     propagate_case: false
     word: false
+    vars:
+      - name: "current_time"
+        type: "date"
+        params:
+          format: "%Y-%m-%d %H:%M:%S"
